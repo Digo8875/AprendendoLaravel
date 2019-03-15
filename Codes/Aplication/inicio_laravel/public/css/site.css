@@ -1,0 +1,67 @@
+.btn-digo{
+	background-color: #1D2731;
+	color: #D9B310;
+}
+
+.cabecalho{
+	padding-top:10px;
+}
+
+.copylefts {
+  width: 100%;
+  z-index: 9999;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+}
+
+.div-mestre{
+	background-color: #328CC1;
+	position: static;
+}
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown-menu{
+    position:absolute;
+    top:20px;
+    right: 0;
+}
+
+.fundo-divs{
+	background-color: #DCDCDC;
+}
+
+.logo{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.table{
+	background-color: white;
+}
+
+.texto-grande-esconder{ 
+  max-width: 100px;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.texto-grande-esconder:hover {
+  overflow: visible;
+}
+
+.texto-logo{
+	text-align: center;
+	padding-bottom: 10px;
+	color: black;
+}
+
+.titulo-tabela{
+	margin-top: 20px;
+	margin-bottom: 5px;
+}

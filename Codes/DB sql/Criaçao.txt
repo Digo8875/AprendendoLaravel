@@ -1,0 +1,3 @@
+Nome usuário: inicio_laravel
+senha: inicio_laravel
+Nome do DB: inicio_laravel

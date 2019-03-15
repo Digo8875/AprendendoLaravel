@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteRule ^ /inicio_laravel/index.php [L]
+</IfModule>
