@@ -20,3 +20,10 @@
 Route::get('/', 'HomeController@index');
 
 Route::resource('produto', 'ProdutoController');
+Route::get('produto/{id}/desativar', 'ProdutoController@desativar');
+
+Route::resource('recebimento', 'RecebimentoController');
+Route::get('recebimento/{id}/desativar', 'RecebimentoController@desativar');
+
+Route::resource('venda', 'VendaController');
+Route::get('venda/{id}/desativar', 'VendaController@desativar');
