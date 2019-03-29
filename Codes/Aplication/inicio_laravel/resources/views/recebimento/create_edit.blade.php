@@ -27,6 +27,8 @@ Criar/Editar Recebimento
 				{{ Form::open(['url' => 'recebimento/'.$obj->id.'', 'method' => 'PATCH']) }}
 				@endif
 
+					{!! Form::token() !!}
+
 					{{ Form::hidden('id', $obj->id) }}
 
 				 	<div class='form-group col-lg-4' style='margin-top: 15px'>

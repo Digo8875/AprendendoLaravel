@@ -27,3 +27,7 @@ Route::get('recebimento/{id}/desativar', 'RecebimentoController@desativar');
 
 Route::resource('venda', 'VendaController');
 Route::get('venda/{id}/desativar', 'VendaController@desativar');
+
+Route::resource('relatorio_estoque', 'Relatorio_estoqueController');
+
+Route::resource('relatorio_venda', 'Relatorio_vendaController');

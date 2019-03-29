@@ -44,9 +44,20 @@
                             <a class='dropdown-item' href='{{ url('/recebimento') }}'>Recebimento</a>
                         </div>
                     </div>
-                    <div class='col-lg-6'>
-                        
+
+                    <div class='dropdown col-lg-2'>
+                        <button class='btn btn-secondary dropdown-toggle col-lg-12' type='button' id='dropdownMenuFuncionalidades' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                            Relatórios
+                        </button>
+                        <div class='dropdown-menu col-lg-12' aria-labelledby='dropdownMenuFuncionalidades'>
+                            <a class='dropdown-item' href='{{ url('/relatorio_estoque') }}'>Estoque</a>
+                            <a class='dropdown-item' href='{{ url('/relatorio_venda') }}'>Venda</a>
+                        </div>
                     </div>
+
+                    <div class='dropdown col-lg-8'>
+                    </div>
+
                 </nav>
             </div>
         </header>

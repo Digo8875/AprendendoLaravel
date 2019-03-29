@@ -33,7 +33,7 @@ Lista Recebimentos
 			  <tbody>
 			  	@if(count($lista_recebimentos) < 1)
 			  		<tr>
-						<td colspan='6'>{{ "Não há registros" }}</td>
+						<td colspan='8'>{{ "Não há registros" }}</td>
 					</tr>
 			  	@else
 				  	@for($i = 0; $i < count($lista_recebimentos); $i++)

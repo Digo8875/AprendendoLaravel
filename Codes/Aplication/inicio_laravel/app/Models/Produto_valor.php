@@ -27,4 +27,5 @@ class Produto_valor extends Model
 
     	return $result;
     }
+
 }

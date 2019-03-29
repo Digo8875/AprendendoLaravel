@@ -5,5 +5,5 @@ Home
 @stop
   
 @section('conteudo')
-<h1>Olá Mundo</h1>
+<h1>Home page</h1>
 @stop
