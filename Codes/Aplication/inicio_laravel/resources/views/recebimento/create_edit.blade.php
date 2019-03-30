@@ -34,16 +34,34 @@ Criar/Editar Recebimento
 				 	<div class='form-group col-lg-4' style='margin-top: 15px'>
 					    {{ Form::label('nome_cliente', 'Nome do Cliente:') }}
 						{{ Form::text('nome_cliente', $obj->nome_cliente, ['class' => 'form-control']) }}
+
+						<div class='row col-lg-12'>
+							@if($errors->has('nome_cliente'))
+								<span class='alert alert-danger'>{{ $errors->first('nome_cliente') }}</span>
+							@endif
+						</div>
 				  	</div>
 
 				  	<div class='form-group col-lg-4' style='margin-top: 15px'>
 					    {{ Form::label('produto', 'Selecione o Produto:') }}
 						{{ Form::select('produto_id', $lista_produtos) }}
+
+						<div class='row col-lg-12'>
+							@if($errors->has('produto_id'))
+								<span class='alert alert-danger'>{{ $errors->first('produto_id') }}</span>
+							@endif
+						</div>
 				  	</div>
 
 				  	<div class='form-group col-lg-4' style='margin-top: 15px'>
 					    {{ Form::label('quantidade', 'Quantidade do Produto:') }}
 						{{ Form::number('quantidade', $obj->quantidade, ['class' => 'form-control']) }}
+
+						<div class='row col-lg-12'>
+							@if($errors->has('quantidade'))
+								<span class='alert alert-danger'>{{ $errors->first('quantidade') }}</span>
+							@endif
+						</div>
 				  	</div>
 
 				  	<div class="form-group col-lg-4">

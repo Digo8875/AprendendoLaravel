@@ -34,11 +34,23 @@ Criar/Editar Produto
 				 	<div class='form-group col-lg-4' style='margin-top: 15px'>
 					    {{ Form::label('nome', 'Nome do Produto:') }}
 						{{ Form::text('nome', $obj->nome, ['class' => 'form-control']) }}
+
+						<div class='row col-lg-12'>
+							@if($errors->has('nome'))
+								<span class='alert alert-danger'>{{ $errors->first('nome') }}</span>
+							@endif
+						</div>
 				  	</div>
 
 				  	<div class='form-group col-lg-4' style='margin-top: 15px'>
 					    {{ Form::label('valor', 'Valor do Produto:') }}
-						{{ Form::number('valor', $obj->valor, ['class' => 'form-control']) }}
+						{{ Form::number('valor', $obj->valor, ['class' => 'form-control', 'step' => 'any']) }}
+
+						<div class='row col-lg-12'>
+							@if($errors->has('valor'))
+								<span class='alert alert-danger'>{{ $errors->first('valor') }}</span>
+							@endif
+						</div>
 				  	</div>
 
 				  	<div class="form-group col-lg-4">

@@ -25,6 +25,17 @@ class ProdutoController extends Controller
   
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'nome' => 'required|regex:/^[\pL\s\-]+$/u',
+            'valor' => 'required|numeric|min:0',
+        ],[
+            'nome.required' => 'Preencha o nome do produto.',
+            'nome.regex' => 'O nome do produto deve conter apenas letras.',
+            'valor.required' => 'Preencha o valor do produto.',
+            'valor.numeric' => 'O valor do produto deve ser um número.',
+            'valor.min' => 'O valor do produto deve ser positivo.'
+        ]);
+
         $produto = new Produto;
         $produto->nome = $request['nome'];
         if($request['ativo'] == true)
@@ -63,6 +74,17 @@ class ProdutoController extends Controller
   
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'nome' => 'required|alpha',
+            'valor' => 'required|numeric|min:0',
+        ],[
+            'nome.required' => 'Preencha o nome do produto.',
+            'nome.alpha' => 'O nome do produto deve conter apenas letras.',
+            'valor.required' => 'Preencha o valor do produto.',
+            'valor.numeric' => 'O valor do produto deve ser um número.',
+            'valor.min' => 'O valor do produto deve ser positivo.'
+        ]);
+
         $produto = Produto::findOrFail($id);
         $produto->nome = $request['nome'];
         if($request['ativo'] == true)

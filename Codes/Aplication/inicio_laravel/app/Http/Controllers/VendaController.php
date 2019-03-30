@@ -82,6 +82,24 @@ class VendaController extends Controller
   
     public function update(Request $request, $id)
     {
+        $obj_quant_recebe = Produto::get_quant_recebe_produto($request['produto_id']);
+        $obj_quant_venda = Produto::get_quant_venda_produto($request['produto_id']);
+        $quant_estoque = $obj_quant_recebe->quant_recebe - $obj_quant_venda->quant_venda;
+
+        $this->validate($request, [
+            'nome_cliente' => 'required|regex:/^[\pL\s\-]+$/u',
+            'produto_id' => 'required|numeric',
+            'quantidade' => 'required|numeric|between:1,'.$quant_estoque
+        ],[
+            'nome_cliente.required' => 'Preencha o nome do cliente.',
+            'nome_cliente.regex' => 'O nome do cliente deve conter apenas letras.',
+            'produto_id.required' => 'Selecione o produto.',
+            'produto_id.numerio' => 'O id deve ser um número.',
+            'quantidade.required' => 'Preencha a quantidade a ser vendida.',
+            'quantidade.numeric' => 'A quantidade deve ser um número.',
+            'quantidade.between' => 'A quantidade deve haver em estoque: 1-'.$quant_estoque
+        ]);
+
         $venda = Venda::find($id);
         $venda->nome_cliente = $request['nome_cliente'];
         if($request['ativo'] == true)

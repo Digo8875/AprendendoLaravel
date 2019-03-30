@@ -64,7 +64,7 @@ class Relatorio_estoqueController extends Controller
                 ['offset' => 0.2],
                 ['offset' => 0.25],
                 ['offset' => 0.3]
-            ]
+            ],
         ]);
 
         $lava->PieChart('ValorEstoque', $grafico_valor_estoque, [

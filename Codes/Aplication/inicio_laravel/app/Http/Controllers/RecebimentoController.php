@@ -25,6 +25,20 @@ class RecebimentoController extends Controller
   
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'nome_cliente' => 'required|regex:/^[\pL\s\-]+$/u',
+            'produto_id' => 'required|numeric',
+            'quantidade' => 'required|numeric|min:1'
+        ],[
+            'nome_cliente.required' => 'Preencha o nome do cliente.',
+            'nome_cliente.regex' => 'O nome do cliente deve conter apenas letras.',
+            'produto_id.required' => 'Selecione o produto.',
+            'produto_id.numerio' => 'O id deve ser um número.',
+            'quantidade.required' => 'Preencha a quantidade a ser estocada.',
+            'quantidade.numeric' => 'A quantidade deve ser um número.',
+            'quantidade.min' => 'A quantidade deve ser maior do que zero.'
+        ]);
+
         $recebimento = new Recebimento;
         $recebimento->nome_cliente = $request['nome_cliente'];
         if($request['ativo'] == true)
@@ -60,6 +74,20 @@ class RecebimentoController extends Controller
   
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'nome_cliente' => 'required|regex:/^[\pL\s\-]+$/u',
+            'produto_id' => 'required|numeric',
+            'quantidade' => 'required|numeric|min:1'
+        ],[
+            'nome_cliente.required' => 'Preencha o nome do cliente.',
+            'nome_cliente.regex' => 'O nome do cliente deve conter apenas letras.',
+            'produto_id.required' => 'Selecione o produto.',
+            'produto_id.numerio' => 'O id deve ser um número.',
+            'quantidade.required' => 'Preencha a quantidade a ser estocada.',
+            'quantidade.numeric' => 'A quantidade deve ser um número.',
+            'quantidade.min' => 'A quantidade deve ser maior do que zero.'
+        ]);
+
         $recebimento = Recebimento::find($id);
         $recebimento->nome_cliente = $request['nome_cliente'];
         if($request['ativo'] == true)

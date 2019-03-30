@@ -52,9 +52,9 @@ Relatorio Estoque
 							<td>{{ $i + 1 }}</td>
 							<td>{{ $lista_produtos[$i]->id }}</td>
 							<td>{{ $lista_produtos[$i]->nome }}</td>
-							<td>{{ $lista_produtos[$i]->valor }}</td>
+							<td>R$ {{ $lista_produtos[$i]->valor }}</td>
 							<td>{{ $lista_produtos[$i]->quant_recebe -  $lista_produtos[$i]->quant_venda }}</td>
-							<td>{{ ($lista_produtos[$i]->quant_recebe -  $lista_produtos[$i]->quant_venda) * $lista_produtos[$i]->valor }}</td>
+							<td>R$ {{ ($lista_produtos[$i]->quant_recebe -  $lista_produtos[$i]->quant_venda) * $lista_produtos[$i]->valor }}</td>
 							<td>{{ $lista_produtos[$i]->quant_recebe }}</td>
 							<td>{{ $lista_produtos[$i]->quant_venda }}</td>
 							</td>
